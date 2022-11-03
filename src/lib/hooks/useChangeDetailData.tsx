@@ -7,11 +7,13 @@ import {
   useChangeFuelSegmentEnumToKorean
 } from "./";
 
-const defaultValue = {
+const defaultValue: NewCarsData = {
   id: 0,
   imageUrl: "",
   name: "",
   brand: "",
+  segmentKorean: "전체",
+  fuelKorean: "전기",
   insurance: [{ name: "", description: "" }],
   amount: "",
   carInfoList: [{ name: "", description: "" }],
@@ -67,13 +69,15 @@ const useChangeDetailData = (data?: CarsData) => {
         imageUrl,
         name,
         brand,
+        segmentKorean,
+        fuelKorean,
         insurance,
         amount: amountLocalString,
         carInfoList,
         additionalProducts: newAdditionalProducts
       });
     }
-  }, [data, segmentKorean, fuelKorean]);
+  }, [data]);
 
   return detail;
 };

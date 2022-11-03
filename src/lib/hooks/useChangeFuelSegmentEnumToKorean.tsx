@@ -1,9 +1,16 @@
 import { useState } from "react";
-import { FUELTYPE, SEGMENT, TFuelType, TSegment } from "../types/types";
+import {
+  FUELTYPE,
+  SEGMENT,
+  TFuelType,
+  TFuelTypeValue,
+  TSegment,
+  TSegmentValue
+} from "../types/types";
 
 const useChangeFuelSegmentEnumToKorean = () => {
-  const [fuel, setFuel] = useState("");
-  const [segment, setSegment] = useState("");
+  const [fuel, setFuel] = useState<TFuelTypeValue>("전기");
+  const [segment, setSegment] = useState<TSegmentValue>("전체");
 
   const changeFuelToKorean = (fuelTypeKey: TFuelType) => {
     setFuel(FUELTYPE[fuelTypeKey]);
