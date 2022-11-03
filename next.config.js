@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
-const path = require("path");
+import { resolve } from "path";
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  webpack: (config, { webpack }) => {
+  webpack: (config) => {
     config.resolve = {
       alias: {
-        "@": path.resolve(__dirname, "src")
+        "@": resolve(__dirname, "src")
       },
       ...config.resolve
     };
@@ -17,4 +17,4 @@ const nextConfig = {
   }
 };
 
-module.exports = nextConfig;
+export default nextConfig;

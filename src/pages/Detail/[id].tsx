@@ -80,7 +80,7 @@ const Detail = () => {
 
 export default Detail;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery(["cars", "ALL"], getCars);
   return {

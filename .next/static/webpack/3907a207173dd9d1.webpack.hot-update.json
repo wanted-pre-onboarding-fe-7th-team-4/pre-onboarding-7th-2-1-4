@@ -1,1 +1,15 @@
-{"c":["pages/Detail/[id]","pages/index","webpack"],"r":["pages/Detail/[id]"],"m":["./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=C%3A%5CUsers%5CHameo%5CDocuments%5Cpre-onboading-2-1-4%5Cpre-onboarding-7th-2-1-4%5Csrc%5Cpages%5CDetail%5C%5Bid%5D.tsx&page=%2FDetail%2F%5Bid%5D!","./src/Components/CarProfile/index.tsx","./src/Components/CarProfile/styles.tsx","./src/Components/ListHeader/indx.tsx","./src/Components/ListHeader/styled.ts","./src/Components/ListItem/index.tsx","./src/Components/ListItem/styles.tsx","./src/Components/SEO/seo.tsx","./src/pages/Detail/[id].tsx"]}
+{
+  "c": ["pages/Detail/[id]", "pages/index", "webpack"],
+  "r": ["pages/Detail/[id]"],
+  "m": [
+    "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=C%3A%5CUsers%5CHameo%5CDocuments%5Cpre-onboading-2-1-4%5Cpre-onboarding-7th-2-1-4%5Csrc%5Cpages%5CDetail%5C%5Bid%5D.tsx&page=%2FDetail%2F%5Bid%5D!",
+    "./src/Components/CarProfile/index.tsx",
+    "./src/Components/CarProfile/styles.tsx",
+    "./src/Components/ListHeader/indx.tsx",
+    "./src/Components/ListHeader/styled.ts",
+    "./src/Components/ListItem/index.tsx",
+    "./src/Components/ListItem/styles.tsx",
+    "./src/Components/SEO/seo.tsx",
+    "./src/pages/Detail/[id].tsx"
+  ]
+}
