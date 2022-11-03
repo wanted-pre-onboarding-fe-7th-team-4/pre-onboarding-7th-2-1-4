@@ -1,16 +1,16 @@
 import Category from "@/Components/Category";
 import { TSegment } from "@/lib/types";
 import { useState } from "react";
-import { payload } from "@/lib/mock";
 import CarItemList from "@/Components/CarItemList";
-import { CarsData } from "@/lib/types";
-
+import { useCarList } from "@/lib/hooks";
 const categoryData: TSegment[] = ["ALL", "E", "D", "C", "SUV"];
 
 const Home = () => {
   const [currentCategory, setCurrentCategory] = useState<TSegment>(
     categoryData[0]
   );
+  const { isLoading, cars } = useCarList(currentCategory);
+
   return (
     <>
       <Category
@@ -18,7 +18,7 @@ const Home = () => {
         currentCategory={currentCategory}
         setCurrentCategory={setCurrentCategory}
       />
-      <CarItemList isLoading={false} carItemData={payload as CarsData[]} />
+      <CarItemList isLoading={isLoading} carItemData={cars} />
     </>
   );
 };

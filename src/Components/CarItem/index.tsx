@@ -19,6 +19,7 @@ const CarItem = ({ carData }: Props) => {
     useChangeAmountToLocalString();
   const { fuel, segment, changeFuelToKorean, changeSegmentToKorean } =
     useChangeFuelSegmentEnumToKorean();
+
   useEffect(() => {
     if (carData) {
       calculateDate(carData.createdAt);

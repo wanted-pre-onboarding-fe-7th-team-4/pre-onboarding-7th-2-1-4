@@ -1,3 +1,4 @@
+import { AxiosError } from "axios";
 import { getCars } from "@/lib/api";
 import { CarsData, TSegmentType } from "@/lib/types/";
 import { useQuery } from "@tanstack/react-query";
@@ -5,10 +6,10 @@ import { useQuery } from "@tanstack/react-query";
 const useCarList = (category: TSegmentType) => {
   const { isLoading, isError, data, error } = useQuery<
     CarsData[],
-    Error,
+    AxiosError,
     CarsData[],
     [string, TSegmentType]
-  >(["cars", category], getCars);
+  >(["cars", category], getCars, { onError: (error) => error });
 
   return { isLoading, isError, cars: data, error };
 };

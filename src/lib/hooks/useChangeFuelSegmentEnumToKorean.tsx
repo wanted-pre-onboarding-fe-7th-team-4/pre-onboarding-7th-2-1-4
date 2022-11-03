@@ -19,7 +19,6 @@ const useChangeFuelSegmentEnumToKorean = () => {
   const changeSegmentToKorean = (segmentType: TSegment) => {
     setSegment(SEGMENT[segmentType]);
   };
-
   return { fuel, segment, changeFuelToKorean, changeSegmentToKorean };
 };
 

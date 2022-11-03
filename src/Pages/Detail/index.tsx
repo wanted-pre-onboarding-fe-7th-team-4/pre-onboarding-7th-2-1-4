@@ -1,13 +1,13 @@
 import CarProfile from "@/Components/CarProfile";
 import ListHeader from "@/Components/ListHeader/indx";
 import ListItem from "@/Components/ListItem";
-// import { useParams } from "react-router-dom";
-import { payload } from "@/lib/mock";
-import { useChangeDetailData } from "@/lib/hooks";
-import { CarsData } from "../../lib/types/interface";
+import { useParams } from "react-router-dom";
+import { useChangeDetailData, useCar } from "@/lib/hooks";
+import { CardItemListWrapper } from "@/Components/CarItemList/styles";
 
 const Detail = () => {
-  // const { id } = useParams();
+  const { id } = useParams();
+  const { isLoading, isError, car } = useCar(Number(id));
   const {
     imageUrl,
     name,
@@ -16,7 +16,24 @@ const Detail = () => {
     amount,
     carInfoList,
     additionalProducts
-  } = useChangeDetailData(payload[0] as CarsData);
+  } = useChangeDetailData(car);
+
+  if (isError) {
+    return (
+      <CardItemListWrapper>
+        <p className="message">서버에서 응답이 없습니다.</p>
+      </CardItemListWrapper>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <CardItemListWrapper>
+        <p className="message">불러오는 중</p>
+      </CardItemListWrapper>
+    );
+  }
+
   return (
     <>
       <CarProfile imageUrl={imageUrl} brand={brand} name={name} />

@@ -16,8 +16,7 @@ export const queryClient = new QueryClient({
       onError: queryErrorHandler,
       staleTime: 600000,
       cacheTime: 900000,
-      refetchOnWindowFocus: false,
-      suspense: true
+      refetchOnWindowFocus: false
     }
   }
 });
