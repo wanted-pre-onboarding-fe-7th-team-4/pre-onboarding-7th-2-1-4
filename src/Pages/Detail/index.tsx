@@ -47,7 +47,7 @@ const Detail = () => {
         />
       ))}
 
-      {insurance.length && (
+      {insurance.length > 0 && (
         <>
           <ListHeader title="보험" />
           {insurance.map(({ name, description }, index) => (
@@ -55,7 +55,7 @@ const Detail = () => {
           ))}
         </>
       )}
-      {additionalProducts.length && (
+      {additionalProducts.length > 0 && (
         <>
           <ListHeader title="추가 상품" />
           {additionalProducts.map(({ name, amount }, index) => (
