@@ -11,7 +11,7 @@ export const CardItemListWrapper = styled.div`
     text-align: center;
     vertical-align: middle;
     font-weight: 700;
-    font-size: 17px;
+    font-size: ${({ theme }) => theme.fontSize.medium};
     line-height: 21px;
     top: 50%;
     transform: translate(0, -50%);

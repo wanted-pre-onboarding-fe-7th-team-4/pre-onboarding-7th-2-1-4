@@ -5,7 +5,7 @@ export const Container = styled.header`
   height: 60px;
   position: relative;
   align-items: center;
-  border-bottom: 1px solid var(--color-black);
+  border-bottom: 1px solid ${({ theme }) => theme.color.black};
 
   button {
     width: 24px;
@@ -21,9 +21,9 @@ export const Container = styled.header`
   h1 {
     flex: 1;
     font-weight: 700;
-    font-size: 17px;
+    font-size: ${({ theme }) => theme.fontSize.medium};
     line-height: 21px;
     text-align: center;
-    color: var(--color-black);
+    color: ${({ theme }) => theme.color.black};
   }
 `;

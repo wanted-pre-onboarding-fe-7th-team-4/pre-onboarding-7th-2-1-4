@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  border-bottom: 1px solid var(--color-black);
+  border-bottom: 1px solid ${({ theme }) => theme.color.black};
   height: 120px;
 
   &:last-child {
@@ -18,12 +18,12 @@ export const Container = styled.div`
 
   .textWrapper {
     p {
-      color: var(--color-black);
+      color: ${({ theme }) => theme.color.black};
     }
     .brand,
     .name {
       font-weight: 700;
-      font-size: 14px;
+      font-size: ${({ theme }) => theme.fontSize.small};
       line-height: 17px;
     }
     .type {
@@ -32,7 +32,7 @@ export const Container = styled.div`
     .type,
     .amount {
       font-weight: 500;
-      font-size: 12px;
+      font-size: ${({ theme }) => theme.fontSize.XSmall};
       line-height: 15px;
     }
   }

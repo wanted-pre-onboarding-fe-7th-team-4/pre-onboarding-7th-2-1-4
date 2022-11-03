@@ -6,18 +6,13 @@ export const TagWrapper = styled.button<{ selected: boolean }>`
   border: none;
   font-family: "Inter";
   font-weight: 700;
-  font-size: 14px;
+  font-size: ${({ theme }) => theme.fontSize.medium};
   line-height: 17px;
   flex-shrink: 0;
   cursor: pointer;
 
-  ${({ selected }) =>
-    selected
-      ? css`
-          color: #ffffff;
-          background-color: var(--color-black);
-        `
-      : css`
-          background-color: var(--color-gray);
-        `}
+  ${({ selected, theme }) => css`
+    background-color: ${selected ? theme.color.black : theme.color.gray};
+    color: ${selected ? theme.color.white : theme.color.black};
+  `}
 `;
