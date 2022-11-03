@@ -8,8 +8,19 @@ import { theme, GlobalStyles } from "@/lib/styles";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { HelmetProvider } from "react-helmet-async";
+import queryErrorHandler from "./lib/utils/queryErrorHandler";
 
-const queryClient = new QueryClient();
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      onError: queryErrorHandler,
+      staleTime: 600000,
+      cacheTime: 900000,
+      refetchOnWindowFocus: false,
+      suspense: true
+    }
+  }
+});
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
