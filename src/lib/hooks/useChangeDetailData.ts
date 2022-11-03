@@ -5,7 +5,7 @@ import {
   useCalculateDate,
   useChangeAmountToLocalString,
   useChangeFuelSegmentEnumToKorean
-} from "./";
+} from ".";
 
 const defaultValue: NewCarsData = {
   id: 0,
