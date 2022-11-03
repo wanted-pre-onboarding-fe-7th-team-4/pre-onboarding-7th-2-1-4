@@ -1,1 +1,44 @@
-{"version":3,"pages404":true,"basePath":"","redirects":[{"source":"/:path+/","destination":"/:path+","internal":true,"statusCode":308,"regex":"^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"}],"headers":[],"dynamicRoutes":[{"page":"/Detail/[id]","regex":"^/Detail/([^/]+?)(?:/)?$","routeKeys":{"id":"id"},"namedRegex":"^/Detail/(?<id>[^/]+?)(?:/)?$"}],"staticRoutes":[{"page":"/","regex":"^/(?:/)?$","routeKeys":{},"namedRegex":"^/(?:/)?$"}],"dataRoutes":[{"page":"/","dataRouteRegex":"^/_next/data/1e3l_\\-PqQFe5TGh27EAsZ/index.json$"},{"page":"/Detail/[id]","routeKeys":{"id":"id"},"dataRouteRegex":"^/_next/data/1e3l_\\-PqQFe5TGh27EAsZ/Detail/([^/]+?)\\.json$","namedDataRouteRegex":"^/_next/data/1e3l_\\-PqQFe5TGh27EAsZ/Detail/(?<id>[^/]+?)\\.json$"}],"rewrites":[]}
+{
+  "version": 3,
+  "pages404": true,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "dynamicRoutes": [
+    {
+      "page": "/Detail/[id]",
+      "regex": "^/Detail/([^/]+?)(?:/)?$",
+      "routeKeys": { "id": "id" },
+      "namedRegex": "^/Detail/(?<id>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    }
+  ],
+  "dataRoutes": [
+    {
+      "page": "/",
+      "dataRouteRegex": "^/_next/data/1e3l_\\-PqQFe5TGh27EAsZ/index.json$"
+    },
+    {
+      "page": "/Detail/[id]",
+      "routeKeys": { "id": "id" },
+      "dataRouteRegex": "^/_next/data/1e3l_\\-PqQFe5TGh27EAsZ/Detail/([^/]+?)\\.json$",
+      "namedDataRouteRegex": "^/_next/data/1e3l_\\-PqQFe5TGh27EAsZ/Detail/(?<id>[^/]+?)\\.json$"
+    }
+  ],
+  "rewrites": []
+}
