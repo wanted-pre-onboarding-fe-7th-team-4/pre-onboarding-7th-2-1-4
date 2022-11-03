@@ -21,3 +21,5 @@ export type TSegment = keyof SegmentObject;
 export type TSegmentValue = SegmentObject[TSegment];
 
 export type TSegmentRequest = "SUV" | "C" | "D" | "E" | "";
+
+export type TSegmentType = "SUV" | "C" | "D" | "E" | "ALL";

@@ -22,6 +22,10 @@ export interface CarsData {
   }[];
 }
 
+export interface ResponseBody {
+  payload: CarsData[];
+}
+
 export interface NewCarsData {
   id: number;
   imageUrl: string;
