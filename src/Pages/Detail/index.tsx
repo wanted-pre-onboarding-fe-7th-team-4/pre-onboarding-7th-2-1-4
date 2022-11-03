@@ -4,6 +4,7 @@ import ListItem from "@/Components/ListItem";
 import { useParams } from "react-router-dom";
 import { useChangeDetailData, useCar } from "@/lib/hooks";
 import { CardItemListWrapper } from "@/Components/CarItemList/styles";
+import { MetaTag } from "@/lib/seo/MetaTag";
 
 const Detail = () => {
   const { id } = useParams();
@@ -36,6 +37,11 @@ const Detail = () => {
 
   return (
     <>
+      <MetaTag
+        title={brand + name}
+        description={`월 ${amount} 원`}
+        imgsrc={imageUrl}
+      />
       <CarProfile imageUrl={imageUrl} brand={brand} name={name} />
       <ListItem value={`월 ${amount} 원`} />
       <ListHeader title="차량 정보" />
