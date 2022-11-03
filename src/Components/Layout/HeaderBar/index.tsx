@@ -1,13 +1,14 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useRouter } from "next/router";
 import IconBack from "../IconBack";
 import { Container } from "./styles";
 
 const HeaderBar = () => {
-  const { pathname } = useLocation();
+  const router = useRouter();
+  const { pathname } = router;
   const isHome = pathname === "/";
-
-  const navigate = useNavigate();
-  const onClick = () => navigate(-1);
+  const onClick = () => {
+    router.back();
+  };
   return (
     <Container>
       {!isHome && (

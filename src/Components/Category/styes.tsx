@@ -7,4 +7,7 @@ export const CategoryWrapper = styled.nav`
   border-bottom: 1px solid ${({ theme }) => theme.color.black};
   overflow-x: auto;
   overflow-y: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const ImgContainer = styled.div`
+  position: relative;
+  width: 100%;
   height: 240px;
   & > img {
     width: 100%;

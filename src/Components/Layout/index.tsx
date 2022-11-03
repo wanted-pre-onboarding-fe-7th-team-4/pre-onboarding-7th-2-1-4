@@ -1,14 +1,15 @@
 import HeaderBar from "./HeaderBar";
-import { Outlet } from "react-router-dom";
 import { Container } from "./styles";
 
-const Layout = () => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => {
   return (
     <Container>
       <HeaderBar />
-      <div className="content">
-        <Outlet />
-      </div>
+      <div className="content">{children}</div>
     </Container>
   );
 };

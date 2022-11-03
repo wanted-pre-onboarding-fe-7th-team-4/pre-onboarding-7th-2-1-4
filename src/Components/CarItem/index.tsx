@@ -1,13 +1,15 @@
+"use client";
 import React, { useEffect } from "react";
 import { Container } from "./styles";
 import ItemTag from "../ItemTag";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { CarsData } from "../../lib/types/interface";
 import {
   useChangeFuelSegmentEnumToKorean,
   useCalculateDate,
   useChangeAmountToLocalString
 } from "@/lib/hooks";
+import Image from "next/image";
 
 interface Props {
   carData: CarsData;
@@ -31,7 +33,7 @@ const CarItem = ({ carData }: Props) => {
 
   return (
     <Container>
-      <Link to={`/detail/${carData.id}`}>
+      <Link href={`/Detail/${carData.id}`}>
         <div className="textWrapper">
           <p className="brand">{carData.attribute.brand}</p>
           <p className="name">{carData.attribute.name}</p>
@@ -41,11 +43,12 @@ const CarItem = ({ carData }: Props) => {
           <p className="amount">월 {amountLocalString} 원 부터</p>
         </div>
         <div>
-          <img
+          <Image
             src={carData.attribute.imageUrl}
             alt={carData.attribute.name}
             width={152}
             height={80}
+            priority
           />
         </div>
         {day < 1 && <ItemTag className="newItemTag" />}
