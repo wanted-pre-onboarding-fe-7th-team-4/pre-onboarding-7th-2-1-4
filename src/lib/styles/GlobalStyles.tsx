@@ -2,12 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import ResetStyle from "./ResetStyle";
 
 const GlobalStyle = createGlobalStyle`
-    :root {
-        --color-black: #000000;
-        --color-gray: #D9D9D9;
-        --color-blue: #0094ff;
-    }
-
     ${ResetStyle};
 
     body {

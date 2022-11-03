@@ -1,4 +1,4 @@
-import { ResponseBody, TSegmentType } from "@/lib/types/";
+import { ResponseBody, TSegment } from "@/lib/types/";
 import axios from "axios";
 
 const api = axios.create({
@@ -8,7 +8,7 @@ const api = axios.create({
 export const getCars = async ({
   queryKey
 }: {
-  queryKey: [string, TSegmentType];
+  queryKey: [string, TSegment];
 }) => {
   if (queryKey[1] === "ALL") {
     return (await api.get<ResponseBody>("")).data.payload;

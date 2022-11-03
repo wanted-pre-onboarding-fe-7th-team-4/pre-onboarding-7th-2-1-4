@@ -3,8 +3,7 @@ export type {
   TFuelTypeValue,
   TSegment,
   TSegmentValue,
-  TSegmentRequest,
-  TSegmentType
+  TSegmentRequest
 } from "./types";
 export { FUELTYPE, SEGMENT } from "./types";
 

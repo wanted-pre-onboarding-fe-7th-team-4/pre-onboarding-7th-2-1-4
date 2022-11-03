@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
 import { getCars } from "@/lib/api";
-import { CarsData, TSegmentType } from "@/lib/types";
+import { CarsData, TSegment } from "@/lib/types";
 import { useQuery } from "@tanstack/react-query";
 
 const useCar = (id: number) => {
@@ -8,7 +8,7 @@ const useCar = (id: number) => {
     CarsData[],
     AxiosError,
     CarsData | undefined,
-    [string, TSegmentType]
+    [string, TSegment]
   >(["cars", "ALL"], getCars, {
     select: (list) => list.find((item) => item.id === id),
     onError: (error) => error
