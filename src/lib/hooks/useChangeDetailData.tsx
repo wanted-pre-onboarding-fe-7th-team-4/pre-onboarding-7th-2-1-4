@@ -77,7 +77,7 @@ const useChangeDetailData = (data?: CarsData) => {
         additionalProducts: newAdditionalProducts
       });
     }
-  }, [data]);
+  }, [data, month, week, date]);
 
   return detail;
 };
