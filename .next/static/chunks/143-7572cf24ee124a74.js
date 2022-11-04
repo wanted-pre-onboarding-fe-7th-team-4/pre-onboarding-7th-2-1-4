@@ -2399,13 +2399,11 @@
           if (
             ((this.options = this.client.defaultQueryOptions(t)),
             (0, o.VS)(r, this.options) ||
-              this.client
-                .getQueryCache()
-                .notify({
-                  type: "observerOptionsUpdated",
-                  query: this.currentQuery,
-                  observer: this
-                }),
+              this.client.getQueryCache().notify({
+                type: "observerOptionsUpdated",
+                query: this.currentQuery,
+                observer: this
+              }),
             void 0 !== this.options.enabled &&
               "boolean" != typeof this.options.enabled)
           )
@@ -2709,12 +2707,10 @@
                   t(this.currentResult);
                 }),
               t.cache &&
-                this.client
-                  .getQueryCache()
-                  .notify({
-                    query: this.currentQuery,
-                    type: "observerResultsUpdated"
-                  });
+                this.client.getQueryCache().notify({
+                  query: this.currentQuery,
+                  type: "observerResultsUpdated"
+                });
           });
         }
       }
