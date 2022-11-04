@@ -30,8 +30,19 @@
     "build": "next build",
     "start": "next start",
     "postinstall": "husky install",
+    "postbuild": "react-snap",
     "format": "prettier --cache --write .",
     "lint": "eslint --cache ."
+  },
+  "reactSnap": {
+    "include": [
+      "/",
+      "/detail"
+    ],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   },
   "browserslist": {
     "production": [
