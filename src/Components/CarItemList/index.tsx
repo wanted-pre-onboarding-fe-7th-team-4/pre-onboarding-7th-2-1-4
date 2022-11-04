@@ -1,3 +1,4 @@
+"use client";
 import { CarsData } from "@/lib/types";
 import { CardItemListWrapper } from "./styles";
 import CarItem from "../CarItem";
