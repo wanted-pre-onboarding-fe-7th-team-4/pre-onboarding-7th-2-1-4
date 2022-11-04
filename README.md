@@ -13,7 +13,7 @@
 | 고현수       | https://github.com/movie42/pre-onboarding-7th-2-1-4                                              |
 | 김하영       | https://github.com/Fibo4487/wanted-preOnBoarding-7th/tree/master/2-1/default-typescript-cra-main |
 | 박라영       | https://github.com/rieulp/pre-onboarding-7th-2-1-4                                               |
-| 박호준       | https://github.com/ganeodolu                                                                     |
+| 박호준       | https://github.com/ganeodolu/wanted-pre-onboarding-course/tree/mission2-1/pre-onboarding-7th-2-1-4     |
 | 이슬         | https://github.com/seul-dev/pre-onboarding-7th-2-4                                               |
 | 조윤정       | https://github.com/yunjjeongjo                                                                   |
 | 최지영       | https://github.com/ohtmm/pre-onboarding-7th-2-1-4                                                |
@@ -88,13 +88,13 @@ npm start
 
 - 처음에 react-helmet-async를 사용해서 SEO 구현했습니다. 하지만 배포 후에 정상적으로 동작하지 않는 문제가 있었습니다. 그래서 저희는 network 창을 살펴보았는데 index.html의 정적파일에서는 build 단계에서 들어가있는 기본적인 meta 태그만 들어있었습니다. react-helmet-async는 빌드된 정적 index.html파일에 javascript를 사용하여 meta tag를 주입해줍니다. 하지만 주소를 복사해서 SNS나 블로그에 붙여 넣는 순간에 크롤러가 바라보고 있는 대상은 비어있는 index.html 파일이기 때문에 meta tag가 없다고 생각하여 SEO가 의도한 대로 동작하지 않았습니다.
 - 이 문제를 해결하기 위해서는 SSR이나 SSG를 통해서 초기에 받아와야하는 html 정적 파일을 미리 생성해 놓아야 하는 문제가 있습니다.
-- pre-rendering 빌드할 때 미리 특정 페이지를 랜더링해서, html파일을 만들어 두는 방법입니다. react-snap 라이브러리를 통해 해당 라우팅 경로를 지정해주는 방법인데 Sns나 검색엔진의 클로러가 클라이언트에서 렌더링을 하지 않아서 helmet 등으로 지정한 header 관련 정보는 물론 페이지 내용까지 가져가지 못하는 문제가 발생하엿습니다.
+- pre-rendering 빌드할 때 미리 특정 페이지를 랜더링해서, html파일을 만들어 두는 방법입니다. react-snap 라이브러리를 통해 해당 라우팅 경로를 지정해주는 방법인데 SNS나 검색엔진의 크롤러가 클라이언트에서 렌더링을 하지 않아서 helmet 등으로 지정한 header 관련 정보는 물론 페이지 내용까지 가져가지 못하는 문제가 발생였습니다.
 - React 공식문서에서는 [ReactDOMServer](https://reactjs.org/docs/react-dom-server.html#gatsby-focus-wrapper)를 사용하여 이 문제를 해결할 수 있다고 하여 express 서버를 열은 뒤 같은 폴더 내 html파일을 express.static()으로 사용하여 정적 html을 보내주는 서버를 열어 Helmet.renderStatic() 및 ReactDom.renderToString()으로 HTTP "content-type/text-html"으로 넣어 pre-rendering을 구현을 시도했습니다.
 - 그러나 배포 단계에서는 express를 동시에 여는 방법이 리눅스 환경에서 컴퓨팅을 지원해주는 배포를 해줘야 했기 때문에 vercel, netlify 등과 같은 환경에서는 같은 폴더 내에서 여는 방법이 없어 백엔드와 진행하는 프로젝트와 적합하다고 판단하였습니다.
 
 ## 3. React Query를 활용한 데이터 호출
 
-- query key 배열에 segment와 fuelType를 넣어 key 변화를 감지하여 API로부터 데이터를 가져왔습니다.
+- query key 배열에 segment와 fuelType를 넣은 후 key 변화를 감지하여 API로부터 데이터를 가져왔습니다.
 - queryClient에 옵션을 지정하여 useQuery마다 옵션을 넣지 않고 통합적으로 관리하도록 하였습니다.
 - staleTime과 cacheTime을 옵션으로 사용하여 동일한 호출은 기존 값을 활용하도록 하였습니다.
 - select 옵션을 활용하여 필터된 데이터를 캐시하여 활용하였습니다.
@@ -126,6 +126,7 @@ npm start
 - tanstack/react-query
   - 데이터 캐싱, 효율적인 에러 처리와 패칭을 위하여 사용하였습니다.
 - react-helmet-async
+  - SEO 구현을 위하여 사용하였습니다.
 
 ### dev
 
